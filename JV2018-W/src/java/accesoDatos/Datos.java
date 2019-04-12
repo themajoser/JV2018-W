@@ -3,7 +3,8 @@
  * Almacén de datos del programa. Utiliza patron Façade.
  * @since: prototipo2.0
  * @source: Datos.java 
- * @version: 2.0 - 2019.03.23
+ * @version: 2.1 - 2019.04.12
+ * @author: Grupo 0
  * @author: ajp
  */
 
