@@ -4,7 +4,11 @@
  *  @since: prototipo1.1
  *  @source: Fecha.java 
  *  @version: 2.1 - 2019/04/29
- *  @author: Alvaro, Pedro, Ivan grupo 1
+ *  @author: Grupo 1
+ *	@author: Ivan
+ *	@author: Pedro
+ *	@author: Alvaro
+ *	@author: ajp
  */
 
 package util;
