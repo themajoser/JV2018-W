@@ -4,7 +4,10 @@
  * @since: prototipo2.1
  * @source: Mundo.java 
  * @version: 2.1 - 2019.04.29
- * @author: Ivan, Pedro, Alvaro Grupo 1
+ * @author: Grupo 1
+ * @author: Ivan 
+ * @author: Pedro 
+ * @author: Alvaro 
  */
 
 package modelo;
