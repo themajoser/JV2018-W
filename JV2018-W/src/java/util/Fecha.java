@@ -3,8 +3,12 @@
  *  Clase-utilidad que adapta el uso de un Calendario para manejo de fechas en el programa.
  *  @since: prototipo1.1
  *  @source: Fecha.java 
- *  @version: 2.0 - 2019/04/21
- *  @author: ajp
+ *  @version: 2.1 - 2019/04/29
+ *  @author: Grupo 1
+ *	@author: Ivan
+ *	@author: Pedro
+ *	@author: Alvaro
+ *	@author: ajp
  */
 
 package util;
