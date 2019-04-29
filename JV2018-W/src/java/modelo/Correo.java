@@ -4,8 +4,10 @@
  *  Utiliza un string para representar el texto del correo.  
  *  @since: prototipo1.1
  *  @source: Correo.java 
- *  @version: 2.0 - 2019/03/23 
+ *  @version: 2.1 - 2019/04/29 
  *  @author: ajp
+ *  @author: grupo 2
+ *  @author: VictorJLucas
  */
 
 package modelo;
