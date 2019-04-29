@@ -1,10 +1,10 @@
 /** 
  * Proyecto: Juego de la vida.
- * Organiza aspectos de gestión de la simulación según el modelo2
- * @since: prototipo1.2
- * @source: Simulacion.java 
- * @version: 2.0 - 2019.03.23
- * @author: ajp
+ * Organiza aspectos de gestión de la clase Mundo según el modelo2
+ * @since: prototipo2.1
+ * @source: Mundo.java 
+ * @version: 2.1 - 2019.04.29
+ * @author: Ivan, Pedro, Alvaro Grupo 1
  */
 
 package modelo;
