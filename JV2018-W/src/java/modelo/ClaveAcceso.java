@@ -4,8 +4,9 @@
  *  Utiliza un string para representar el texto del ClaveAcceso.  
  *  @since: prototipo1.2
  *  @source: ClaveAcceso.java 
- *  @version: 2.0 - 2019/03/23
- *  @author: ajp
+ *  @version: 2.1 - 2019/04/29
+ *  @author: GRUPO 2:
+ *  @author: Jorge Orenes
  */
 
 package modelo;
