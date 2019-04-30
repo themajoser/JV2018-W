@@ -1,9 +1,12 @@
 /** Proyecto: Juego de la vida.
- *  Implementa el concepto de Nif según el modelo2 
- *  @since: prototipo1.1
+ *  Implementa el concepto de Nif seg�n el modelo2 
+ *  @since: prototipo 1.1
  *  @source: Nif.java 
- *  @version: 2.0 - 2019/03/23 
- *  @author: ajp
+ *  @version: 2.1 - 2019/04/29  
+ *  @author: grupo1
+ *  @author: Pedro
+ *  @author: Ivan
+ *  @author: Alvaro
  */
 
 package modelo;
