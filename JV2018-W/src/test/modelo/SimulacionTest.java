@@ -1,12 +1,13 @@
-package modelo;
 /** Proyecto: Juego de la vida.
  *  Prueba Junit5 de la clase Simulacion según el modelo1.1
  *  @since: prototipo1.0
- *  @source: CorreoTest.java 
- *  @version: 1.1 - 2019/01/22
- *  @author: ajp
+ *  @source: Simulacion.java 
+ *  @version: 2.1 - 2019/04/30
+ *  @author: Grupo 2
+ *  @author: Fran Arce
  */
 
+package modelo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
