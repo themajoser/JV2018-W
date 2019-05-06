@@ -2,8 +2,10 @@
  *  Implementa el concepto de Persona según el modelo2.
  *  @since: prototipo2.0
  *  @source: Persona.java 
- *  @version: 2.0 - 2019/03/23 
- *  @author: ajp
+ *  @version: 2.0 - 2019/5/6 
+ *  @author: Grupo 3
+ *  @author: Marruan Adib Elmkhait
+ *  
  */
 
 package modelo;

@@ -1,9 +1,9 @@
 /** Proyecto: Juego de la vida.
  *  Prueba Junit5 de la clase SesionUsuario según el modelo1.1
- *  @since: prototipo1.0
+ *  @since: prototipo 2.0
  *  @source: SesionUsuarioTest.java 
- *  @version: 1.1 - 2019/01/22
- *  @author: ajp
+ *  @version: 2.0 2019/05/6
+ *  @author: Marruan Adib Elmkhait
  */
 
 package modelo;
