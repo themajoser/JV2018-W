@@ -4,7 +4,8 @@
  * @since: prototipo1.2
  * @source: Posicion.java 
  * @version: 2.0 - 2019.03.25
- * @author: ajp
+ * @author: Grupo 3
+ * @author: Jose Luis Carrillo Alcaraz
  */
 
 package modelo;

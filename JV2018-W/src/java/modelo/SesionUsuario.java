@@ -4,7 +4,8 @@
  *  @since: prototipo1.0
  *  @source: SesionUsuario.java 
  *  @version: 2.0 - 2019.03.23
- *  @author: ajp
+ *  @author: Grupo 3
+ *  @author: Jose Luis Carrillo Alcaraz
  */
 
 package modelo;
