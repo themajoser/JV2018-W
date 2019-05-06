@@ -1,3 +1,13 @@
+/** Proyecto: Juego de la vida.
+ *  Prueba Junit5 de la clase Fecha según el modelo1.1
+ *  @since: prototipo1.1
+ *  @source: PruebaFecha.java 
+ *  @version: 2.1 - 2019/05/06
+ *  @author: Grupo 1
+ *  @author Alvaro
+ *  @author Pedro
+ *  @author Ivan
+ */
 package util;
 
 public class PruebaFecha {
