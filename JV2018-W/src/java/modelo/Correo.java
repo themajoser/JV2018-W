@@ -9,6 +9,7 @@
  *  @author: grupo 2
  *  @author: VictorJLucas
  *  @author: Antonio
+ *  @author: Diego Cano
  */
 
 package modelo;
