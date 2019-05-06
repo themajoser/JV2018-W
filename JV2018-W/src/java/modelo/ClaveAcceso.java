@@ -7,6 +7,7 @@
  *  @version: 2.1 - 2019/04/29
  *  @author: GRUPO 2:
  *  @author: Jorge Orenes
+ *  @author: Diego Cano
  */
 
 package modelo;

@@ -7,6 +7,7 @@
  * @author: Grupo 2
  * @author: Fran Arce
  * @author: Antonio
+ * @author: Diego Cano
  */
 
 package modelo;
