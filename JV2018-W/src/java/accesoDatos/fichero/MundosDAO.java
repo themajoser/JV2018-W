@@ -4,10 +4,13 @@
  * Aplica el patron Singleton.
  * Participa del patron Template Method heredando el método indexSort().
  * Colabora en el patrón Façade.
- * @since: prototipo2.0
+ * @since: prototipo2.1
  * @source: MundosDAO.java 
- * @version: 2.0 - 2019/03/25
- * @author: ajp
+ * @version: 2.1 - 2019/05/06
+ * @author: Grupo 1
+ * @author: Ivan 
+ * @author: Pedro 
+ * @author: Alvaro 
  */
 
 package accesoDatos.fichero;
