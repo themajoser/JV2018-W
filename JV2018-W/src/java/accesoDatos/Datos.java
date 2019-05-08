@@ -3,8 +3,7 @@
  * Almacén de datos del programa. Utiliza patron Façade.
  * @since: prototipo2.0
  * @source: Datos.java 
- * @version: 2.1 - 2019.04.12
- * @author: Grupo 0
+ * @version: 2.0 - 2019.03.23
  * @author: ajp
  */
 
@@ -12,7 +11,10 @@ package accesoDatos;
 
 import java.util.List;
 
-import accesoDatos.fichero.*;
+import accesoDatos.db4o.UsuariosDAO;
+import accesoDatos.fichero.SesionesDAO;
+import accesoDatos.fichero.SimulacionesDAO;
+import accesoDatos.memoria.MundosDAO;
 import modelo.Identificable;
 import modelo.ModeloException;
 import modelo.Mundo;
@@ -29,9 +31,8 @@ public class Datos {
 
 	/**
 	 * Constructor por defecto.
-	 * @throws DatosException 
 	 */
-	public Datos() throws DatosException {
+	public Datos() {
 		usuariosDAO = UsuariosDAO.getInstance();
 		sesionesDAO = SesionesDAO.getInstance();
 		mundosDAO = MundosDAO.getInstance();
@@ -88,13 +89,13 @@ public class Datos {
 	 * @throws DatosException - si no existe.
 	 * @throws ModeloException 
 	 */
-	public Usuario bajaUsuario(String idUsr) throws DatosException, ModeloException  {
+	public Usuario bajaUsuario(String idUsr) throws DatosException {
 		Usuario usrBaja = usuariosDAO.baja(idUsr);
 		// Baja de sesiones y simulaciones dependientes.
-		for (Identificable sesionBaja : sesionesDAO.obtenerTodosMismoUsr(idUsr)) {
+		for (Identificable sesionBaja : sesionesDAO.obtenerTodasMismoUsr(idUsr)) {
 			sesionesDAO.baja(sesionBaja.getId());
 		}
-		for (Identificable simulBaja : simulacionesDAO.obtenerTodosMismoUsr(idUsr)) {
+		for (Identificable simulBaja : simulacionesDAO.obtenerTodasMismoUsr(idUsr)) {
 			simulacionesDAO.baja(simulBaja.getId());
 		}	
 		return usrBaja;
@@ -104,9 +105,8 @@ public class Datos {
 	 * Método fachada para baja de un Usuario y sus dependencias. 
 	 * @param usr - el objeto Usuario a dar de baja.
 	 * @throws DatosException - si no existe.
-	 * @throws ModeloException 
 	 */
-	public Usuario bajaUsuario(Usuario usr) throws DatosException, ModeloException  {
+	public Usuario bajaUsuario(Usuario usr) throws DatosException {
 		assert usr != null;
 		return bajaUsuario(usr.getId());
 	}
@@ -170,10 +170,9 @@ public class Datos {
 	 * Reenvia petición al método DAO específico.
 	 * @param simulacion - el objeto Simulacion a obtener.
 	 * @return - lista de simulaciones encontradas.
-	 * @throws ModeloException 
 	 */	
-	public List<Identificable> obtenerSesionesUsuario(String idUsr) throws ModeloException {
-		return sesionesDAO.obtenerTodosMismoUsr(idUsr);
+	public List<Identificable> obtenerSesionesUsuario(String idUsr) {
+		return sesionesDAO.obtenerTodasMismoUsr(idUsr);
 	}
 			
 	/**
@@ -273,8 +272,8 @@ public class Datos {
 	 * @return - lista de simulaciones encontradas.
 	 * @throws ModeloException 
 	 */	
-	public List<Identificable> obtenerSimulacionesUsuario(String idUsr) throws ModeloException {
-		return simulacionesDAO.obtenerTodosMismoUsr(idUsr);
+	public List<Identificable> obtenerSimulacionesUsuario(String idUsr) {
+		return simulacionesDAO.obtenerTodasMismoUsr(idUsr);
 	}
 
 	/**
