@@ -43,6 +43,7 @@ public class Mundo implements Identificable, Serializable {
 		
 		establecerTamañoMundo();	
 		establecerLeyes();
+		
 	}
 
 	public Mundo() throws ModeloException {	
@@ -57,14 +58,22 @@ public class Mundo implements Identificable, Serializable {
 
 	public Mundo(Mundo mundo) {
 		this.nombre = new String(mundo.nombre);
-		this.espacio = mundo.espacio.clone();
-		setDistribucion(new LinkedList<Posicion>(mundo.distribucion));
+		this.espacio = clonarEspacio(mundo.espacio);
+		this.distribucion = new LinkedList<Posicion>(mundo.distribucion);
 		this.constantes = new HashMap<String, int[]>(mundo.constantes);
-		this.tipoMundo = mundo.tipoMundo;
-		
-		establecerTamañoMundo();	
+		this.tipoMundo = mundo.getTipoMundo();
 		establecerLeyes();
 	}
+	
+	
+	private byte[][] clonarEspacio(byte[][] espacio){
+		byte[][] espacioClonado = new byte[espacio.length][espacio.length];
+		for(int i = 0; i<espacio.length;i++) {
+			System.arraycopy(espacio[i], 0, espacioClonado[i], 0, espacio.length);
+		}
+		return espacioClonado;
+	}
+	
 	
 	public void setNombre(String nombre) throws ModeloException {	
 		assert nombre != null;
@@ -94,6 +103,18 @@ public class Mundo implements Identificable, Serializable {
 		return nombre;
 	}
 	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public byte[][] getEspacio() {
+		return espacio;
+	}
+
+	public List<Posicion> getDistribucion() {
+		return distribucion;
+	}
+
 	public FormaEspacio getTipoMundo() {
 		return tipoMundo;
 	}
@@ -116,7 +137,7 @@ public class Mundo implements Identificable, Serializable {
 		this.espacio = espacio;
 	}
 	
-	private void setConstantes(Map constantes) {
+	public void setConstantes(Map constantes) {
 		assert constantes != null;
 		this.constantes = constantes;	
 	}
@@ -149,7 +170,7 @@ public class Mundo implements Identificable, Serializable {
 		}
 	}
 	
-	private void establecerTamañoMundo() {
+	public void establecerTamañoMundo() {
 		this.tamañoMundo = espacio.length;
 	}
 	
