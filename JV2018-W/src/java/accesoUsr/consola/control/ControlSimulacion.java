@@ -59,10 +59,10 @@ public class ControlSimulacion {
 	private void arrancarSimulacion() {
 		int generacion = 0;
 		do {
-			VistaSimulacion().mostrarMensaje("\nGeneración: " + generacion);
+			vistaSimulacion.mostrarMensaje("\nGeneración: " + generacion);
 			simulacion.getMundo().actualizarMundo();
 			generacion++;
-			VistaSimulacion().mostrarSimulacion(this);
+			vistaSimulacion.mostrarSimulacion(this);
 		} while (generacion < CICLOS);
 	}
 
