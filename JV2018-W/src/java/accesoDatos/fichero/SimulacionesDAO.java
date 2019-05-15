@@ -6,8 +6,10 @@
  * Colabora en el patrón Façade.
  * @since: prototipo2.0
  * @source: SimulacionesDAO.java 
- * @version: 2.0 - 2019/03/25 
+ * @version: 2.0 - 2019/05/15 
  * @author: ajp
+ * @author: GRUPO 2:
+ * @author: Themajoser
  */
 
 package accesoDatos.fichero;
