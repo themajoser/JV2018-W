@@ -64,7 +64,7 @@ public class SimulacionesDAO extends DAOIndexSort implements OperacionesDAO, Per
 	 *  @return instancia
 	 * @throws DatosException 
 	 */
-	public static SimulacionesDAO getInstance() throws DatosException {
+	public static SimulacionesDAO getInstance()  {
 		if (instance == null) {
 			instance = new SimulacionesDAO();
 		}
@@ -160,9 +160,14 @@ public class SimulacionesDAO extends DAOIndexSort implements OperacionesDAO, Per
 	 * @return - Sublista con las simulaciones encontrada; null si no existe ninguna.
 	 * @throws ModeloException 
 	 */
-	public List<Identificable> obtenerTodosMismoUsr(String idUsr) throws ModeloException {
+	public List<Identificable> obtenerTodasMismoUsr(String idUsr)  {
 		Simulacion aux = null;
-		aux = new Simulacion();
+		try {
+			aux = new Simulacion();
+		} catch (ModeloException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		aux.setUsr(UsuariosDAO.getInstance().obtener(idUsr));
 		//Busca posición inserción ordenada por idUsr + fecha. La última para el mismo usuario.
 		return separarSimulacionesUsr(indexSort(aux.getId(), datosSimulaciones) - 1);
