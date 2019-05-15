@@ -6,6 +6,7 @@
  * @version: 2.1 - 2019.05.15
  * @author: Grupo 2:
  * @author: VictorJLucas
+ * @author: themajoser
  */
 package accesoUsr.consola.control;
 
@@ -52,5 +53,54 @@ public class ControlSimulacion {
 		vistaSimulacion.confirmar();
 
 	}
+	/**
+	 * Reproduce una simulacion
+	 */
+	private void arrancarSimulacion() {
+		int generacion = 0;
+		do {
+			VistaSimulacion().mostrarMensaje("\nGeneración: " + generacion);
+			simulacion.getMundo().actualizarMundo();
+			generacion++;
+			VistaSimulacion().mostrarSimulacion(this);
+		} while (generacion < CICLOS);
+	}
+
+	/*
+	 * Método que devuelve el número de ciclos
+	 */
+	public Integer getCICLOS() {
+		return CICLOS;
+	}
+
+	/*
+	 * Método que devuelve el objeto vistaSimulacion
+	 */
+	public VistaSimulacion getVistaSimulacion() {
+		return vistaSimulacion;
+	}
+
+	/*
+	 * Método que devuelve el objeto vistaSimulacion
+	 */
+	public Simulacion getSimulacion() {
+		return simulacion;
+	}
+
+	/*
+	 * Método que devuelve el objeto mundo
+	 */
+	public Mundo getMundo() {
+		return mundo;
+	}
+
+	/*
+	 * Método que devuelve el objeto datos
+	 */
+	public Datos getDatos() {
+		return datos;
+	}
 
 }
+
+
