@@ -6,8 +6,9 @@
  * Colabora en el patrón Façade.
  * @since: prototipo2.0
  * @source: SimulacionesDAO.java 
- * @version: 2.0 - 2019/03/25 
- * @author: ajp
+ * @version: 2.0 - 2019/05/15 
+ * @author: Grupo 2
+ * @author: Fran Arce
  */
 
 package accesoDatos.memoria;
@@ -106,9 +107,15 @@ public class SimulacionesDAO extends DAOIndexSort implements OperacionesDAO {
 	 * @return - Sublista con las simulaciones encontrada; null si no existe ninguna.
 	 * @throws ModeloException 
 	 */
-	public List<Identificable> obtenerTodosMismoUsr(String idUsr) throws ModeloException {
+	public List<Identificable> obtenerTodasMismoUsr(String idUsr) {
 		assert idUsr != null;
-		Simulacion aux = new Simulacion();
+		Simulacion aux = null;
+		try {
+			aux = new Simulacion();
+		} catch (ModeloException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		aux.setUsr(UsuariosDAO.getInstance().obtener(idUsr));
 		//Busca posición inserción ordenada por idUsr + fecha. La última para el mismo usuario.
 		return separarSimulacionesUsr(indexSort(aux.getId(), datosSimulaciones) - 1);
