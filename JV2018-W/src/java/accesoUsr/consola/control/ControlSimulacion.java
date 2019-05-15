@@ -12,14 +12,14 @@ package accesoUsr.consola.control;
 
 import static org.junit.Assert.assertArrayEquals;
 import accesoDatos.Datos;
-import accesoUsr.OperacionesVista;
-import accesoUsr.VistaSimulacion;
+import accesoUsr.consola.vista.VistaSimulacion;
 import accesoUsr.consola.vista.VistaPrincipal;
 import config.Configuracion;
 import modelo.ModeloException;
 import modelo.Mundo;
 import modelo.SesionUsuario;
 import modelo.Simulacion;
+
 
 /*
  * Constructor por defecto.
