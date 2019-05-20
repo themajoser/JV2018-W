@@ -9,6 +9,7 @@
  * @version: 2.1 - 2019/05/13 
  * @author: Grupo 2
  * @author: Fran Arce
+ * @author: ajp
  */
 
 package accesoDatos.db4o;
@@ -24,11 +25,10 @@ import accesoDatos.OperacionesDAO;
 import accesoDatos.fichero.MundosDAO;
 import accesoDatos.fichero.UsuariosDAO;
 import config.Configuracion;
-import modelo.Identificable;
 import modelo.ModeloException;
 import modelo.Simulacion;
-import modelo.Usuario;
 import modelo.Simulacion.EstadoSimulacion;
+import modelo.Usuario;
 import util.Fecha;
 
 public class SimulacionesDAO implements OperacionesDAO {
@@ -102,14 +102,14 @@ public class SimulacionesDAO implements OperacionesDAO {
 
 	@Override
 	public Simulacion obtener(String id) {
-		ObjectSet <Simulacion> resultado;
+		ObjectSet<Simulacion> result = null;
 		Query consulta = db.query();
 		consulta.constrain(Simulacion.class);
-		consulta.descend("id").constrain(id);
-		resultado = consulta.execute();
-		if (resultado.size() > 0) {
-			return resultado.get(0);
-		}		
+		consulta.descend("getId()").constraints().equals(id);
+		result = consulta.execute();
+		if (result.size() > 0) {
+			return result.get(0);
+		}	
 		return null;
 	}
 
