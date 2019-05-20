@@ -138,11 +138,10 @@ public class SimulacionesDAO implements OperacionesDAO {
 	/**
 	 * Metodo que busca todas la simulaciones de un usuario.
 	 * @param idUsr - el identificador de usuario a buscar.
-	 * @return - una consulta de BBDD que obtiene la simulacion de un mismo usuario.
-	 * @throws ModeloException 
+	 * @return - una consulta de BBDD que obtiene la simulacion de un mismo usuario. 
 	 */
 
-	public List<Identificable> obtenerTodasMismoUsr(String idUsr) throws ModeloException {
+	public List<Simulacion> obtenerTodasMismoUsr(String idUsr) {
 		Query consulta = db.query();
 		consulta.constrain(Simulacion.class);
 		consulta.descend("usr").descend("id").constrain(idUsr).equal();
@@ -177,7 +176,7 @@ public class SimulacionesDAO implements OperacionesDAO {
 	 */
 
 	@Override
-	public Object baja(String id) throws DatosException {
+	public Simulacion baja(String id) throws DatosException {
 		assert id != null;
 		assert id != "";
 		assert id != " ";
