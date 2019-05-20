@@ -11,6 +11,7 @@
  * @author: Ivan
  * @author: Alvaro
  * @author: Pedro
+ * @author: ajp
  */
 
 package accesoDatos.db4o;
@@ -111,21 +112,19 @@ public class MundosDAO implements OperacionesDAO {
 	//OPERACIONES DAO
 
 	/**
-	 * Metodo que busca un Mundo dado id.
-	 * @param id - el id del Mundo a buscar. 
-	 * @return - el Mundo encontrado; null si no encuentra. 
+	 * Obtiene objeto Mundo dado su nombre.
+	 * @param nombreMundo - el nombre de Mundo a buscar.
+	 * @return - el Mundo encontrado o null si no existe.
 	 */	
-
 	@Override
-	public Mundo obtener(String id) {
-		ObjectSet <Mundo> resultado;
+	public Mundo obtener(String nombreMundo) {
 		Query consulta = db.query();
 		consulta.constrain(Mundo.class);
-		consulta.descend("id").constrain(id);
-		resultado = consulta.execute();
-		if (resultado.size() > 0) {
-			return resultado.get(0);
-		}		
+		consulta.descend("nombre").constrain(nombreMundo).equal();
+		ObjectSet<Mundo> result = consulta.execute();
+		if (result.size() > 0) {
+			return result.get(0);
+		}
 		return null;
 	}
 
