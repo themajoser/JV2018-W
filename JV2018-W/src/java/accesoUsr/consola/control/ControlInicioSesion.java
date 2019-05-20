@@ -47,7 +47,7 @@ public class ControlInicioSesion {
 	 * @param credencialUsr ya obtenida, puede ser null.
 	 */
 	private void iniciarSesionUsuario(String idUsr) {
-		int intentosPermitidos = new Integer(Configuracion.get().getProperty("sesion.intentosPermitidos"));
+		int intentosPermitidos = Integer.parseInt(Configuracion.get().getProperty("sesion.intentosPermitidos"));
 		String credencialUsr = idUsr;
 		do {
 			if (idUsr == null) {
@@ -55,8 +55,8 @@ public class ControlInicioSesion {
 				credencialUsr = vistaSesion.pedirIdUsr();	
 			}
 			credencialUsr = credencialUsr.toUpperCase();
-			String clave = vistaSesion.pedirClaveAcceso();
-			vistaSesion.mostrarMensaje(credencialUsr);		
+			vistaSesion.mostrarMensaje("Usuario id: " + credencialUsr);
+			String clave = vistaSesion.pedirClaveAcceso();		
 			try {
 				// Busca usuario coincidente con las credenciales.
 				usrEnSesion = fachada.obtenerUsuario(credencialUsr);			
