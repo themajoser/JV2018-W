@@ -1,6 +1,6 @@
 /** Proyecto: Juego de la vida.
- *  Resuelve todos los aspectos relacionados con el control 
- *  principal del programa con un menú. Colabora en el patrón MVC
+ *  Resuelve todos los aspectos relacionados con el control principal del programa con un menú. 
+ *  Colabora en el patrón MVC
  *  @since: prototipo2.1
  *  @source: ControlPrincipal.java 
  *  @version: 2.1 - 2019.05.06
@@ -155,17 +155,12 @@ public class ControlPrincipal {
 	}
 
 	private void ejecutarDemoSimulacion() {
-		try {
-			Simulacion demo = new Simulacion(sesionUsr.getUsr(),
-					new Fecha(), 
-					datos.obtenerMundo(Configuracion.get().getProperty("mundo.nombrePredeterminado")),
-					Integer.parseInt(Configuracion.get().getProperty("simulacion.ciclosPredeterminados")),
-					EstadoSimulacion.PREPARADA);
-			new ControlSimulacion(demo);
-		} 
-		catch (DatosException e) {
-			e.printStackTrace();
-		}
+		Simulacion demo = new Simulacion(sesionUsr.getUsr(),
+				new Fecha(), 
+				datos.obtenerMundo(Configuracion.get().getProperty("mundo.nombrePredeterminado")),
+				Integer.parseInt(Configuracion.get().getProperty("simulacion.ciclosPredeterminados")),
+				EstadoSimulacion.PREPARADA);
+		new ControlSimulacion(demo);
 	}
 
 	// Mundos.

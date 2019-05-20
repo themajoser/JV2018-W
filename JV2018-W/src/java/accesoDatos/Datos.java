@@ -1,6 +1,6 @@
 /** 
  * Proyecto: Juego de la vida.
- * Almacén de datos del programa. Utiliza patron Façade.
+ * Almacén de datos del programa. Utiliza patrón Façade.
  * @since: prototipo2.0
  * @source: Datos.java 
  * @version: 2.1 - 2019.05.10
