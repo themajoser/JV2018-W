@@ -22,8 +22,6 @@ import com.db4o.query.Query;
 
 import accesoDatos.DatosException;
 import accesoDatos.OperacionesDAO;
-import accesoDatos.fichero.MundosDAO;
-import accesoDatos.fichero.UsuariosDAO;
 import config.Configuracion;
 import modelo.ModeloException;
 import modelo.Simulacion;
@@ -61,26 +59,6 @@ public class SimulacionesDAO implements OperacionesDAO {
 
 	private SimulacionesDAO() {
 		db = Conexion.getDB();
-		if (obtener("AAA0T") == null && obtener("III1R") == null) {
-			cargarPredeterminados();
-		}
-	}
-
-	/**
-	 * Método para generar de datos predeterminados de Simulacion.
-	 */
-
-	private void cargarPredeterminados() {
-		try {
-			alta(new Simulacion(UsuariosDAO.getInstance().obtener(new Usuario().getId()),
-					new Fecha(Configuracion.get().getProperty("fecha.predeterminadaFija")), 
-					MundosDAO.getInstance().obtener(Configuracion.get().getProperty("mundo.nombrePredeterminado")),
-					Integer.parseInt(Configuracion.get().getProperty("simulacion.ciclosPredeterminados")),
-					EstadoSimulacion.PREPARADA));
-		} 
-		catch (DatosException | ModeloException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/**
@@ -165,7 +143,6 @@ public class SimulacionesDAO implements OperacionesDAO {
 		} else {
 			throw new DatosException("SimulacionesDAO.alta:" + simulNuevo.getId() +" Ya existe.");
 		}
-
 	}
 
 	/**
@@ -251,7 +228,6 @@ public class SimulacionesDAO implements OperacionesDAO {
 		for (Simulacion simul: obtenerTodos()) {
 			db.delete(simul);
 		}
-		cargarPredeterminados();
-
 	}
+	
 }//class
