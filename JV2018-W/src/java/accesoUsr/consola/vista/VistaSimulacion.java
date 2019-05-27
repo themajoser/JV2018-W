@@ -14,7 +14,6 @@
 package accesoUsr.consola.vista;
 
 import java.io.Console;
-import java.util.Scanner;
 
 import accesoUsr.OperacionesVista;
 import accesoUsr.consola.control.ControlSimulacion;
@@ -41,7 +40,7 @@ public class VistaSimulacion implements OperacionesVista {
 		byte[][] espacio = controlSimulacion.getMundo().getEspacio();
 		for(int i=0 ; i< espacio.length ; i++) {
 			for(int j=0 ; j< espacio.length ; j++) {
-				this.mostrarTextoSimple((espacio[i][j] == 1) ? "|o" : "| ");
+				this.mostrarSimple((espacio[i][j] == 1) ? "|o" : "| ");
 			}
 			this.mostrarMensaje("|");
 		}
@@ -53,12 +52,12 @@ public class VistaSimulacion implements OperacionesVista {
 	 * @param texto
 	 */
 	
-	private void mostrarTextoSimple(String texto) {
+	private void mostrarSimple(String texto) {
 		if(consola != null) {
-			consola.writer().println(texto);
+			consola.writer().print(texto);
 			return;
 		}
-		System.out.println(texto);
+		System.out.print(texto);
 	}
 	
 	/**
@@ -66,7 +65,7 @@ public class VistaSimulacion implements OperacionesVista {
 	 */
 
 	public void confirmar() {
-		mostrarTextoSimple("Simulacion Completada.");
+		mostrarSimple("Simulacion Completada.");
 	}
 
 	/**

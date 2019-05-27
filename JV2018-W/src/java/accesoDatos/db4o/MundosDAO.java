@@ -24,6 +24,7 @@ import com.db4o.query.Query;
 
 import accesoDatos.DatosException;
 import accesoDatos.OperacionesDAO;
+import config.Configuracion;
 import modelo.Identificable;
 import modelo.ModeloException;
 import modelo.Mundo;
@@ -58,7 +59,7 @@ public class MundosDAO implements OperacionesDAO {
 
 	private MundosDAO() {
 		db = Conexion.getDB();
-		if (obtener("AAA0T") == null && obtener("III1R") == null) {
+		if (obtener(Configuracion.get().getProperty("mundo.nombrePredeterminado")) == null) {
 			cargarPredeterminados();
 		}
 	}
