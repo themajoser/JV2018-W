@@ -3,12 +3,12 @@
  *  Clase-utilidad que adapta el uso de un Calendario para manejo de fechas en el programa.
  *  @since: prototipo1.1
  *  @source: Fecha.java 
- *  @version: 2.1 - 2019/04/29
- *  @author: Grupo 1
+ *  @version: 2.2 - 2019/05/21
+  *  @author: Grupo 1
  *	@author: Ivan
  *	@author: Pedro
  *	@author: Alvaro
- *	@author: ajp
+ *  @author: ajp
  */
 
 package util;
@@ -45,8 +45,7 @@ public class Fecha implements Serializable {
 	
 	@SuppressWarnings("deprecation")
 	public Fecha(Date date) {
-		this(date.getYear(), date.getMonth(), date.getDate(), 
-				date.getHours(), date.getMinutes(), date.getSeconds());
+		this(date.getYear(), date.getMonth(), date.getDate());
 	}
 	
 	public Fecha(long marcaTiempo) {
