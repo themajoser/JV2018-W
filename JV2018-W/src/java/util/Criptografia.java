@@ -3,14 +3,13 @@
  *  Clase-utilidades de encriptación.
  *  @since: prototipo2.0
  *  @source: Criptografia.java 
- *  @version: 2.0 - 2019/03/11
+ *  @version: 2.2 - 2019/05/19
  *  @author: ajp
  */
 
 package util;
 
 public class Criptografia {
-
 	/**
 	 * Encriptar un texto con algoritmo de César basado en dos alfabetos desplazados 4 posiciones.
 	 * Mantiene mayúsculas, minúsculas y espacios.
@@ -19,8 +18,8 @@ public class Criptografia {
 	 * @ 
 	 */
 	public static String cesar(String textoClaro) {
-		String alfaNormal =     "AaBbCcDdEeFfGgHhIiJjKkLlMmNnÑñOoPpQqRrSsTtUuVvXxYyZz0123456789!?$%&/#";
-		String alfaDesplazado = "EeFfGgHhIiJjKkLlMmNnÑñOoPpQqRrSsTtUuVvXxYyZz0123456789!?$%&/#AaBbCcDd";
+		String alfaNormal =     "AaBbCcDdEeFfGgHhIiJjKkLlMmNnÑñOoPpQqRrSsTtUuVvXxYyZz0123456789#$*-+&!?%";
+		String alfaDesplazado = "EeFfGgHhIiJjKkLlMmNnÑñOoPpQqRrSsTtUuVvXxYyZz0123456789#$*-+&!?%AaBbCcDd";
 		char charAEncriptar;
 		int posCharAEncriptar;
 		StringBuilder  textoEncriptado = new StringBuilder();
@@ -29,7 +28,6 @@ public class Criptografia {
 			charAEncriptar = textoClaro.charAt(i);
 			posCharAEncriptar = alfaNormal.indexOf(charAEncriptar);
 			textoEncriptado.append(alfaDesplazado.charAt(posCharAEncriptar));
-
 		}
 		return textoEncriptado.toString();
 	}
