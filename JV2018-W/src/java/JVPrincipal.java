@@ -4,19 +4,15 @@
  * Permite incluir id de usuario en la línea de comandos.
  * @since: prototipo1.0
  * @source: JVPrincipal.java 
- * @version: 2.1 - 2019/05/16
+ * @version: 2.2 - 2019/05/27
  * @author: ajp
  */
 
-import accesoUsr.consola.control.ControlPrincipal;
+import accesoUsr.swing.control.ControlPrincipal;
 
 public class JVPrincipal {
 
 	public static void main(String[] args) {		
-		if (args.length > 0) {
-			new ControlPrincipal(args[0]);
-			return;
-		}
 		new ControlPrincipal();
 	}
 	
