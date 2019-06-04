@@ -2,7 +2,7 @@
  * Proyecto: Juego de la vida.
  * Implementación de la clase VistaSimulacion.java para mostrar el aspecto
  * de un mundo para la simulacion.
- * Colabora en el patrón MVC.
+ * Colabora en el patrón MVP.
  * @since: prototipo2.1
  * @source: VistaPrincipal.java 
  * @version: 2.1 - 2019/05/15
@@ -16,7 +16,7 @@ package accesoUsr.consola.vista;
 import java.io.Console;
 
 import accesoUsr.OperacionesVista;
-import accesoUsr.consola.control.ControlSimulacion;
+import accesoUsr.consola.presenter.PresenterEjecucionSimulacion;
 
 public class VistaSimulacion implements OperacionesVista {
 
@@ -36,7 +36,7 @@ public class VistaSimulacion implements OperacionesVista {
 	 * @param controlSimulacion
 	 */
 
-	public void mostrarSimulacion(ControlSimulacion controlSimulacion) {
+	public void mostrarSimulacion(PresenterEjecucionSimulacion controlSimulacion) {
 		byte[][] espacio = controlSimulacion.getMundo().getEspacio();
 		for(int i=0 ; i< espacio.length ; i++) {
 			for(int j=0 ; j< espacio.length ; j++) {
@@ -44,7 +44,6 @@ public class VistaSimulacion implements OperacionesVista {
 			}
 			this.mostrarMensaje("|");
 		}
-
 	}
 
 	/**

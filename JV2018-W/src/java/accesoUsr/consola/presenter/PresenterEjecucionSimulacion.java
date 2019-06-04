@@ -1,14 +1,17 @@
 /** 
  * Proyecto: Juego de la vida.
- * Implementación de la clase ControlSimulacion.java 
+ * Resuelve todos los aspectos relacionados con el estado, 
+ * sincronización y lógica de presentación de la ejecución
+ * de una simulación.
+ * Colabora en el patrón MVP. 
  * @since: prototipo 2.1
- * @source: ControlSimulacion.java
+ * @source: PresenterEjecucionSimulacion.java
  * @version: 2.1 - 2019.05.15
  * @author: Grupo 2:
  * @author: VictorJLucas
  * @author: themajoser
  */
-package accesoUsr.consola.control;
+package accesoUsr.consola.presenter;
 
 import accesoDatos.Datos;
 import accesoUsr.consola.vista.VistaSimulacion;
@@ -20,7 +23,7 @@ import modelo.Simulacion;
 /*
  * Constructor por defecto.
  */
-public class ControlSimulacion {
+public class PresenterEjecucionSimulacion {
 
 	private final Integer CICLOS = Integer
 			.parseInt(Configuracion.get().getProperty("simulacion.ciclosPredeterminados"));
@@ -32,7 +35,7 @@ public class ControlSimulacion {
 	/*
 	 * Constructor adicional que recibe el objeto demo de la clase simulacion.
 	 */
-	public ControlSimulacion(Simulacion demo) {
+	public PresenterEjecucionSimulacion(Simulacion demo) {
 		datos = new Datos();
 		this.simulacion = demo;
 		initControlSimulacion();
@@ -49,6 +52,7 @@ public class ControlSimulacion {
 		vistaSimulacion.confirmar();
 
 	}
+	
 	/**
 	 * Reproduce una simulacion
 	 */

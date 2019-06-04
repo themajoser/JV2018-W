@@ -1,13 +1,14 @@
 /** Proyecto: Juego de la vida.
- *  Resuelve todos los aspectos relacionados con el control 
- *  de inicio de sesión de usuario. Colabora en el patron MVC
+ *  Resuelve todos los aspectos relacionados con el estado, 
+ *  sincronización y lógica de presentación del inicio de sesión de usuario. 
+ *  Colabora en el patron MVP.
  *  @since: prototipo2.1
- *  @source: ControlInicioSesion.java 
+ *  @source: PresenterInicioSesion.java 
  *  @version: 2.2 - 2019.05.17
  *  @author: ajp
  */
 
-package accesoUsr.swing.control;
+package accesoUsr.swing.presenter;
 
 import java.awt.Dialog.ModalityType;
 import java.awt.event.ActionEvent;
@@ -25,14 +26,14 @@ import modelo.SesionUsuario.EstadoSesion;
 import modelo.Usuario;
 import util.Fecha;
 
-public class ControlInicioSesion implements ActionListener, MouseListener {
+public class PresenterInicioSesion implements ActionListener, MouseListener {
 	private int intentosPermitidos;
-	private ControlPrincipal controlPrincipal;
+	private PresenterPrincipal controlPrincipal;
 	private VistaInicioSesion vistaInicioSesion;
 	private Usuario usrEnSesion;
 	private Datos datos;
 
-	public ControlInicioSesion(ControlPrincipal controlPrincipal) {
+	public PresenterInicioSesion(PresenterPrincipal controlPrincipal) {
 		this.controlPrincipal = controlPrincipal;
 		this.initControlSesion();
 	}
