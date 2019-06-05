@@ -1,7 +1,7 @@
 /** Proyecto: Juego de la vida.
  *  Resuelve todos los aspectos relacionados con el estado, 
  *  sincronización y lógica de presentación de una simulación. 
- *  Colabora en el patron MVP
+ *  Colabora en el patrón MVP.
  *  @since: prototipo2.1
  *  @source: PresenterSimulación.java 
  *  @version: 2.2 - 2019.05.17

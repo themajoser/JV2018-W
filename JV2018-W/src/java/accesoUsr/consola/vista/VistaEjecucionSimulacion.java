@@ -4,7 +4,7 @@
  * de un mundo para la simulacion.
  * Colabora en el patrón MVP.
  * @since: prototipo2.1
- * @source: VistaPrincipal.java 
+ * @source: VistaEjecucionSimulacion.java 
  * @version: 2.1 - 2019/05/15
  * @author: Grupo2
  * @author: arm
@@ -18,7 +18,7 @@ import java.io.Console;
 import accesoUsr.OperacionesVista;
 import accesoUsr.consola.presenter.PresenterEjecucionSimulacion;
 
-public class VistaSimulacion implements OperacionesVista {
+public class VistaEjecucionSimulacion implements OperacionesVista {
 
 	private Console consola; //Atributo para teclado de consola.
 
@@ -27,7 +27,7 @@ public class VistaSimulacion implements OperacionesVista {
 	 * Crea objeto para consola por teclado.
 	 */
 	
-	public VistaSimulacion() {
+	public VistaEjecucionSimulacion() {
 		consola = System.console();
 	}
 	

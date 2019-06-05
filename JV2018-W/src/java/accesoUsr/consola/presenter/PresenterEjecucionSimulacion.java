@@ -14,7 +14,7 @@
 package accesoUsr.consola.presenter;
 
 import accesoDatos.Datos;
-import accesoUsr.consola.vista.VistaSimulacion;
+import accesoUsr.consola.vista.VistaEjecucionSimulacion;
 import config.Configuracion;
 import modelo.Mundo;
 import modelo.Simulacion;
@@ -27,7 +27,7 @@ public class PresenterEjecucionSimulacion {
 
 	private final Integer CICLOS = Integer
 			.parseInt(Configuracion.get().getProperty("simulacion.ciclosPredeterminados"));
-	private VistaSimulacion vistaSimulacion;
+	private VistaEjecucionSimulacion vistaSimulacion;
 	private Simulacion simulacion;
 	private Mundo mundo;
 	private Datos datos;
@@ -47,7 +47,7 @@ public class PresenterEjecucionSimulacion {
 	private void initControlSimulacion() {
 
 		mundo = simulacion.getMundo();
-		vistaSimulacion = new VistaSimulacion();
+		vistaSimulacion = new VistaEjecucionSimulacion();
 		arrancarSimulacion();
 		vistaSimulacion.confirmar();
 
@@ -76,7 +76,7 @@ public class PresenterEjecucionSimulacion {
 	/*
 	 * Método que devuelve el objeto vistaSimulacion
 	 */
-	public VistaSimulacion getVistaSimulacion() {
+	public VistaEjecucionSimulacion getVistaSimulacion() {
 		return vistaSimulacion;
 	}
 

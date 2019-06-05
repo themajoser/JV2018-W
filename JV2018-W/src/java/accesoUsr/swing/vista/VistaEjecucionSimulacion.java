@@ -1,9 +1,9 @@
 /** Proyecto: Juego de la vida.
  *  Resuelve todos los aspectos relacionados con la visualización
  *  de la ejecución de una simulación. 
- *  Colabora en el patron MVP.
- *  @since: prototipo2.1
- *  @source: VistaSimulacionTexto.java 
+ *  Colabora en el patrón MVP.
+ *  @since: prototipo2.2
+ *  @source: VistaEjecucionSimulacion.java 
  *  @version: 2.2 - 2019.05.17
  *  @author: ajp
  */
@@ -25,6 +25,7 @@ import accesoUsr.OperacionesVista;
 import accesoUsr.swing.presenter.PresenterEjecucionSimulacion;
 import config.Configuracion;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.JTextField;
 
 public class VistaEjecucionSimulacion extends JFrame implements OperacionesVista {
 
@@ -36,6 +37,8 @@ public class VistaEjecucionSimulacion extends JFrame implements OperacionesVista
 	private JToolBar toolBar;
 	private JPanel panelEstado;
 	private JScrollPane panelVisualizacion;
+	private JScrollPane scrollPane;
+	private JTextArea textArea;
 	
 	public VistaEjecucionSimulacion() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -44,6 +47,7 @@ public class VistaEjecucionSimulacion extends JFrame implements OperacionesVista
 		
 		panelControles = new JPanel();
 		getContentPane().add(panelControles, BorderLayout.NORTH);
+		
 		
 		panelSimulacion = new JPanel();
 		getContentPane().add(panelSimulacion, BorderLayout.CENTER);
@@ -54,11 +58,12 @@ public class VistaEjecucionSimulacion extends JFrame implements OperacionesVista
 		textAreaVisualizacion.setRows(50);
 		textAreaVisualizacion.setColumns(50);
 		textAreaVisualizacion.setTabSize(4);
-		textAreaVisualizacion.setFont(new Font("DejaVu Sans", Font.PLAIN, 15));
+		textAreaVisualizacion.setFont(new Font("Courier New", Font.PLAIN, 16));
 		textAreaVisualizacion.setBackground(Color.WHITE);
 		
 		panelVisualizacion = new JScrollPane(textAreaVisualizacion);
 		panelVisualizacion.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		
 		panelSimulacion.add(panelVisualizacion, BorderLayout.NORTH);
 		
 		toolBar = new JToolBar();
