@@ -1,6 +1,6 @@
 /** 
  * Proyecto: Juego de la vida.
- * Implementación de la clase ControlSimulacion.java 
+ * Implementación de la clase PresenterEjecucionSimulacion.java 
  * @since: prototipo 2.1
  * @source: PresenterEjecucionSimulacion.java
  * @version: 2.2 - 2019.06.05
@@ -47,7 +47,7 @@ public class PresenterEjecucionSimulacion implements ActionListener, WindowListe
 		this.mundo=demo.getMundo();
 		vistaEjecucionSimulacion= new VistaEjecucionSimulacion();
 		arrancarSimulacion();
-		
+		this.configListener();
 		this.vistaEjecucionSimulacion.pack();
 		this.vistaEjecucionSimulacion.setVisible(true);		
 	}
@@ -59,7 +59,7 @@ public class PresenterEjecucionSimulacion implements ActionListener, WindowListe
 		this.mundo=simulacion.getMundo();
 		vistaEjecucionSimulacion= new VistaEjecucionSimulacion();
 		arrancarSimulacion();
-	
+		this.configListener();
 		this.vistaEjecucionSimulacion.pack();
 		this.vistaEjecucionSimulacion.setVisible(true);		
 	}
