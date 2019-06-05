@@ -23,7 +23,7 @@ import config.Configuracion;
 import modelo.Mundo;
 import modelo.Simulacion;
 
-public class PresenterEjecucionSimulacion implements ActionListener, WindowListener {
+public class PresenterEjecucionSimulacion  {
 
 	private  Integer ciclos;
 	private VistaEjecucionSimulacion vistaEjecucionSimulacion;
@@ -47,7 +47,7 @@ public class PresenterEjecucionSimulacion implements ActionListener, WindowListe
 		this.mundo=demo.getMundo();
 		vistaEjecucionSimulacion= new VistaEjecucionSimulacion();
 		arrancarSimulacion();
-		this.configListener();
+		
 		this.vistaEjecucionSimulacion.pack();
 		this.vistaEjecucionSimulacion.setVisible(true);		
 	}
@@ -59,7 +59,7 @@ public class PresenterEjecucionSimulacion implements ActionListener, WindowListe
 		this.mundo=simulacion.getMundo();
 		vistaEjecucionSimulacion= new VistaEjecucionSimulacion();
 		arrancarSimulacion();
-		this.configListener();
+	
 		this.vistaEjecucionSimulacion.pack();
 		this.vistaEjecucionSimulacion.setVisible(true);		
 	}
@@ -89,115 +89,7 @@ public class PresenterEjecucionSimulacion implements ActionListener, WindowListe
 		} while (generacion < ciclos);
 	}
 
-	/*
-	 * Método que devuelve el número de ciclos
-	 */
-	public Integer getCICLOS() {
-		return this.ciclos;
-	}
-
-	/*
-	 * Método que devuelve el objeto vistaSimulacion
-	 */
-	public VistaEjecucionSimulacion getVistaEjecucionSimulacion() {
-		return this.vistaEjecucionSimulacion;
-	}
-
-	/*
-	 * Método que devuelve el objeto vistaSimulacion
-	 */
-	public Simulacion getSimulacion() {
-		return this.simulacion;
-	}
-
-	/*
-	 * Método que devuelve el objeto mundo
-	 */
-	public Mundo getMundo() {
-		return this.mundo;
-	}
-
-	/*
-	 * Método que devuelve el objeto datos
-	 */
-	public Datos getDatos() {
-		return this.datos;
-	}
-
-	@Override
-	public void windowOpened(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void windowClosing(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void windowClosed(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void windowIconified(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void windowDeiconified(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void windowActivated(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void windowDeactivated(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	private void configListener() {
-		// Hay que escuchar todos los componentes que tengan interacción de la vista
-		// registrándoles la clase control que los escucha.
-		this.vistaEjecucionSimulacion.addWindowListener(this);
-		this.vistaEjecucionSimulacion.getBotonFinalizar().addActionListener(this);
-		
-
-
-		//...
-	}
-	//Manejador de eventos de componentes... ActionListener
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(e.getSource() == this.vistaEjecucionSimulacion.getBotonFinalizar()) {
-				//Cierra y borra de la memoria.
-				vistaEjecucionSimulacion.dispose();
-			}
-			
-			
-
-		}
-		public boolean mensajeConfirmacion(String mensaje) {
-			return JOptionPane.showConfirmDialog(null, mensaje,
-					"JV-2018", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION;
-		}
-		// Salida segura única de la aplicación
-		private void salir() {
-			// Confirmar cierre
-				this.datos.cerrar();
-			
-		}
+	
 
 
 
