@@ -16,7 +16,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 import accesoDatos.Datos;
-import accesoUsr.swing.presenter.PresenterEjecucionSimulacion;
+import accesoUsr.consola.presenter.PresenterEjecucionSimulacion;
 import accesoUsr.swing.vista.VistaPrincipal;
 import config.Configuracion;
 import modelo.SesionUsuario;
