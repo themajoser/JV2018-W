@@ -1,43 +1,42 @@
 /** Proyecto: Juego de la vida.
- *  Resuelve todos los aspectos relacionados con el control principal del programa con un menú. 
- *  Colabora en el patrón MVC
+ *  Resuelve todos los aspectos relacionados con el estado, 
+ *  sincronización y lógica de presentación principal del 
+ *  programa con un menú. 
+ *  Colabora en el patrón MVP.
  *  @since: prototipo2.1
- *  @source: ControlPrincipal.java 
+ *  @source: PresenterPrincipal.java 
  *  @version: 2.1 - 2019.05.06
  *  @author: ajp
  */
 
-package accesoUsr.consola.control;
+package accesoUsr.consola.presenter;
 
 import accesoDatos.Datos;
-import accesoDatos.DatosException;
 import accesoUsr.consola.vista.VistaPrincipal;
 import config.Configuracion;
-import modelo.ModeloException;
 import modelo.SesionUsuario;
 import modelo.Simulacion;
 import modelo.Simulacion.EstadoSimulacion;
-import modelo.Usuario;
 import util.Fecha;
 
-public class ControlPrincipal {
+public class PresenterPrincipal {
 
 	private VistaPrincipal vistaPrincipal;
 	private SesionUsuario sesionUsr;
 	private Datos datos;
 
-	public ControlPrincipal(String idUsr) {
+	public PresenterPrincipal(String idUsr) {
 		initMenuPrincipal(idUsr);	
 	}
 
-	public ControlPrincipal() {
+	public PresenterPrincipal() {
 		this(null);
 	}
 
 	private void initMenuPrincipal(String idUsr) {
 		datos = new Datos();
 		vistaPrincipal = new VistaPrincipal();
-		sesionUsr = new ControlInicioSesion(idUsr).getSesion();
+		sesionUsr = new PresenterlInicioSesion(idUsr).getSesion();
 		secuenciaPrincipal();
 	}
 
@@ -160,7 +159,7 @@ public class ControlPrincipal {
 				datos.obtenerMundo(Configuracion.get().getProperty("mundo.nombrePredeterminado")),
 				Integer.parseInt(Configuracion.get().getProperty("simulacion.ciclosPredeterminados")),
 				EstadoSimulacion.PREPARADA);
-		new ControlSimulacion(demo);
+		new PresenterEjecucionSimulacion(demo);
 	}
 
 	// Mundos.

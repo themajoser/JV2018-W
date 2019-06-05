@@ -1,4 +1,3 @@
-package _main;
 /** 
  * Proyecto: Juego de la vida.
  * Implementación del control de inicio de sesión y ejecución de la simulación por defecto.
@@ -9,12 +8,14 @@ package _main;
  * @author: ajp
  */
 
-import accesoUsr.swing.control.ControlPrincipal;
+package _main;
+
+import accesoUsr.swing.presenter.PresenterPrincipal;
 
 public class JVPrincipalSwing {
 
 	public static void main(String[] args) {		
-		new ControlPrincipal();
+		new PresenterPrincipal();
 	}
 	
 } //class
