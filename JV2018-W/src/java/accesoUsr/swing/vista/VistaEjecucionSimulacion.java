@@ -1,10 +1,9 @@
 /** Proyecto: Juego de la vida.
  *  Resuelve todos los aspectos relacionados con la presentación de la 
  *  ejecucion de la simulacion en interfaz grafica.
- *  
  *  @since: prototipo2.1
  *  @source: VistaEjecucionSimulacion.java 
- *  @version: 2.2 - 2019.06.03
+ *  @version: 2.2 - 2019.06.07
  *  @author: Grupo 2
  *  @author: arm - Antonio Ramírez Márquez
  *  @author: Fran Arce
@@ -12,40 +11,31 @@
 
 package accesoUsr.swing.vista;
 
-import javax.swing.JDialog;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
-
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
-
-import config.Configuracion;
-
-import javax.swing.JRadioButton;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
-
 import accesoUsr.swing.presenter.PresenterEjecucionSimulacion;
-
-import java.awt.FlowLayout;
-import javax.swing.JTextPane;
 import javax.swing.JToolBar;
 import javax.swing.ScrollPaneConstants;
-import javax.swing.JTextField;
 import javax.swing.JSeparator;
 
-public class VistaEjecucionSimulacion extends JFrame {
+public class VistaEjecucionSimulacion extends JFrame { //La clase se llama VistaEjecucionSimulacion.
 	
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Lista de atributos que definen los componentes de la ventana.
+	 */
+	
 	private JPanel panelControles;
 	private JPanel panelSimulacion;
 	private JTextArea textAreaVisualizacion;
@@ -65,12 +55,18 @@ public class VistaEjecucionSimulacion extends JFrame {
 	private JLabel estado;
 	int contadorGeneracion = 1;
 	
+	/**
+	 * Constructor de la clase VistaEjecucionSimulacion.
+	 * Diseña la ventana con una serie de texto que contiene informacion del mundo,
+	 * un conjunto de paneles y botones, y una area de visualizacion de texto para mostrar
+	 * el mundo.
+	 */
+	
 	public VistaEjecucionSimulacion() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Ejecución Simulación JV");
 		getContentPane().setLayout(new BorderLayout(0, 0));
 
-		//Adapta tamaño preferido de ventana al 25% de la pantalla
 		Dimension sizePantalla = Toolkit.getDefaultToolkit().getScreenSize();
 		setSize(new Dimension(sizePantalla.width / 2, sizePantalla.height / 2));
 		setPreferredSize(this.getSize());
@@ -134,12 +130,49 @@ public class VistaEjecucionSimulacion extends JFrame {
 		
 	}
 
+	/**
+	 * Metodo get que devuelve el atributo del area de texto.
+	 * @return textAreaVisualizacion
+	 */
+	
 	public JTextArea getTextAreaVisualizacion() {
 		return textAreaVisualizacion;
 	}
 	
+	/**
+	 * Metodo get que devuelve el atributo de boton Finalizar.
+	 * @return botonFinalizar
+	 */
+	
 	public JButton getBotonFinalizar() {
 		return botonFinalizar;
 	}
+	
+	/**
+     * Metodo que muestra la forma de un mundo para la simulacion. 
+     * @param presenterEjecucionSimulacion
+     */
+
+	public void mostrarSimulacion(PresenterEjecucionSimulacion presenterEjecucionSimulacion) {
+        
+        byte[][] espacio = presenterEjecucionSimulacion.getMundo().getEspacio();
+        
+        String idMundo = presenterEjecucionSimulacion.getMundo().getId();
+        String idSimulacion = presenterEjecucionSimulacion.getSimulacion().getId();
+        this.idMundo.setText(idMundo);
+        this.idSimulacion.setText(idSimulacion);
+        this.estado.setText("Simulacion por defecto 'DEMO'");
+        
+        for(int i=0 ; i< espacio.length ; i++) {
+            for(int j=0 ; j< espacio.length ; j++) {
+                this.textAreaVisualizacion.append((espacio[i][j] == 1) ? "|0" : "| ");
+            }
+            this.textAreaVisualizacion.append("| \n");
+            
+        }
+        
+        this.textAreaVisualizacion.append("\n" + "Generacion " + contadorGeneracion + "\n\n");
+        contadorGeneracion++;
+    }
 	
 }
