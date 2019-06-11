@@ -95,11 +95,11 @@ public class SimulacionesDAO implements OperacionesDAO {
     private void crearTablaSimulaciones() throws SQLException {
    	 Statement s = db.createStatement();
    	 s.executeUpdate("CREATE TABLE IF NOT EXISTS simulaciones("  
-   			 + "usr VARCHAR(45)  ,"
+   			 + "usr VARCHAR(45) NOT NULL ,"
    			 + "fecha DATE,"
-   			 + "mundo VARCHAR(45) ,"
-   			 + "ciclos CHAR(10) ,"  
-   			 + "estado VARCHAR(20) ," 
+   			 + "mundo VARCHAR(45) NOT NULL ,"
+   			 + "ciclos CHAR(10) NOT NULL ,"  
+   			 + "estado VARCHAR(20) NOT NULL ," 
    			+ "PRIMARY KEY (`usr`, `fecha`))");
    			 
     }
